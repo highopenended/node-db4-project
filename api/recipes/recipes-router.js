@@ -1,8 +1,7 @@
 const router = require("express").Router();
 
-router.use('*', (req, res) => {
-    // console.log("CHECK")
-    res.json({ api: 'up' });
+router.use("*", (req, res) => {
+    res.status(404).json({ error: "Route not found" });
 });
 
 router.use((err, req, res, next) => {
