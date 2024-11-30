@@ -1,7 +1,8 @@
 const router = require("express").Router();
 
-router.use("*", (req, res) => {
-    res.json({ api: "up" });
+router.use('*', (req, res) => {
+    // console.log("CHECK")
+    res.json({ api: 'up' });
 });
 
 router.use((err, req, res, next) => {
