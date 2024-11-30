@@ -5,6 +5,11 @@ const server = express();
 
 server.use(express.json());
 
+
 server.use("/api/recipes", recipesRouter);
+
+server.use("*", (req, res) => {
+    res.status(404).json({ error: "Route not found" });
+});
 
 module.exports = server;
